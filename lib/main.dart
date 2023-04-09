@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp>{
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Icon(Icons.person),
+                  const Icon(Icons.person),
                   const SizedBox(height: 10),
                   Text(
                     _userInput,
@@ -110,7 +110,7 @@ class _MyAppState extends State<MyApp>{
                     ),
                   ),
                   const SizedBox(height: 10),
-                  Icon(Icons.lock),
+                   const Icon(Icons.lock),
                   const SizedBox(height: 10),
                   Text(
                     _usserInput,
