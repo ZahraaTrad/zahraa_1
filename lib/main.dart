@@ -138,7 +138,7 @@ class _MyAppState extends State<MyApp>{
                 children: const [
                   Icon(Icons.facebook),
                   Icon(Icons.search),
-                  Icon(Icons.phone_iphone),
+                  Icon(Icons.apple),
                 ],
               ),
             ),
