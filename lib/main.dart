@@ -10,8 +10,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp>{
-   String _userInput = '';
-   String _usserInput  = '';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,10 +17,10 @@ class _MyAppState extends State<MyApp>{
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 20),
+            const SizedBox(height: 100),
             Container(
-              width: 150,
-              height: 150,
+              width: 85,
+              height: 85,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.purple,
@@ -31,14 +29,14 @@ class _MyAppState extends State<MyApp>{
                 child: Text(
                   'A',
                   style: TextStyle(
-                    color: Colors.white70,
+                    color: Colors.white,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 100),
             const Text(
               'Login to apparel',
               style: TextStyle(
@@ -47,74 +45,40 @@ class _MyAppState extends State<MyApp>{
             ),
             const SizedBox(height: 20),
             Container(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+              margin: const EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 5),
               decoration: BoxDecoration(
                 border: Border.all(width: 1),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Username',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
+                children: const [
                   TextField(
-                    onChanged: (value){
-                      setState(() {
-                        _userInput = value;
-                      });
-                    },
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person),
                       hintText: 'Username',
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  const Icon(Icons.person),
-                  const SizedBox(height: 10),
-                  Text(
-                    _userInput,
-                    style: const TextStyle(fontSize: 18),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 5),
             Container(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+              margin: const EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 20),
               decoration: BoxDecoration(
                 border: Border.all(width: 1),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Password',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
+                children: const [
                   TextField(
-                    onChanged: (vvalue){
-                      setState(() {
-                        _usserInput = vvalue;
-                      });
-                    },
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
                       hintText: 'Password',
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                   const Icon(Icons.lock),
-                  const SizedBox(height: 10),
-                  Text(
-                    _usserInput,
-                    style: const TextStyle(fontSize: 18),
                   ),
                 ],
               ),
@@ -127,12 +91,18 @@ class _MyAppState extends State<MyApp>{
               ),
             ),
             const SizedBox(height: 20),
-            TextButton(
+            ElevatedButton(
                 onPressed: () {},
                 child: const Text('Login'),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
+                fixedSize: MaterialStateProperty.all<Size>(Size(320, 65)),
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              ),
             ),
             const Spacer(),
-            BottomAppBar(
+            Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
