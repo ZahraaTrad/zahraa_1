@@ -13,6 +13,7 @@ class _MyAppState extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -93,16 +94,16 @@ class _MyAppState extends State<MyApp>{
             const SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {},
-                child: const Text('Login'),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
-                fixedSize: MaterialStateProperty.all<Size>(Size(320, 65)),
+                fixedSize: MaterialStateProperty.all<Size>( const Size(320, 65)),
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                 textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               ),
+                child: const Text('Login'),
             ),
             const Spacer(),
-            Container(
+            BottomAppBar(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
